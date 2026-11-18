@@ -1,0 +1,100 @@
+name: Bug report
+description: Report a reproducible Workbench problem using only sanitized information.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This report and its attachments will be public. Use fictional names and synthetic data. Never include credentials, signed URLs, exported packages, private project code, customer details or business records. For a suspected vulnerability, follow SECURITY.md instead.
+  - type: input
+    id: extension-version
+    attributes:
+      label: Workbench version
+      description: Find the version in the installed extension's details.
+      placeholder: "For example: 0.62.0"
+    validations:
+      required: true
+  - type: input
+    id: host-version
+    attributes:
+      label: VS Code and Windows versions
+      placeholder: "For example: VS Code 1.147.0, Windows 11 x64"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Accounts and environment selection
+        - Component Diff, Retrieve or Deploy
+        - Query Data
+        - Data import
+        - Inspect Metadata
+        - Azure or workflow diagnostics
+        - Power Pages diagnostics or configuration
+        - Component recovery
+        - Agent access (MCP)
+        - Local development tools
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: action
+    attributes:
+      label: Tool and action
+      description: Give the visible tool/button or context-menu command, without private file or resource names.
+      placeholder: "For example: Explorer context menu > Power Platform Workbench: Diff"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use a minimal synthetic example. Replace private names, identifiers and paths consistently.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include a sanitized error message if one is displayed. Do not paste raw authentication or service logs.
+    validations:
+      required: true
+  - type: dropdown
+    id: target-state
+    attributes:
+      label: Did the operation change its Target?
+      description: If uncertain, inspect the existing outcome before retrying a write.
+      options:
+        - Not applicable — local or read-only operation
+        - No — operation did not start
+        - Yes — some or all changes reached Target
+        - Unknown — a request may have reached Target
+    validations:
+      required: true
+  - type: textarea
+    id: tool-versions
+    attributes:
+      label: Relevant tool versions and additional context
+      description: Include PowerShell, PAC, Azure CLI or project SDK versions when relevant. Inspect and redact screenshots before attaching them.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public-report check
+      options:
+        - label: I checked the report and attachments for private project/client information, business data and authentication material.
+          required: true
+        - label: I searched existing issues for the same problem.
+          required: true

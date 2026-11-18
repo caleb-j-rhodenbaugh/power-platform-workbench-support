@@ -1,0 +1,9 @@
+.vscode/
+.codex/
+.cursor/
+.env
+.env.*
+*.log
+*.vsix
+*.zip
+node_modules/

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Development board
+    url: https://github.com/users/caleb-j-rhodenbaugh/projects/4
+    about: View issue triage and feature planning. Submit a new bug or feature using the forms above.
+  - name: Security reporting policy
+    url: https://github.com/caleb-j-rhodenbaugh/power-platform-workbench-support/blob/main/SECURITY.md
+    about: Read the current policy before sharing a suspected vulnerability. Do not disclose sensitive details in a public issue.

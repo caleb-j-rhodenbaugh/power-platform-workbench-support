@@ -1,0 +1,49 @@
+name: Feature request
+description: Propose a reusable improvement without private project or client details.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe a general workflow using fictional examples. This request is public; do not include private project code, client names, credentials, signed URLs or business records.
+  - type: input
+    id: area
+    attributes:
+      label: Workbench area
+      placeholder: "For example: Diff Review, Accounts, Query Data or Azure Diagnostics"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Explain the user's goal and the limitation in the current workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe what the user should be able to do and how they would know it succeeded.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing alternatives
+      description: Explain whether an existing Workbench tool or Microsoft tool already addresses part of this need.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance examples
+      description: Give concrete, generic examples that would demonstrate the improvement. Avoid implementation or delivery assumptions.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public-request check
+      options:
+        - label: This request contains no private project/client information, business data or authentication material.
+          required: true
+        - label: I searched existing issues for the same request.
+          required: true
