@@ -13,7 +13,9 @@ This is the public home for bug reports, feature requests and development tracki
 3. Inspect the changes in **Diff Review**. Uncheck files that are not ready and verify the captured destination.
 4. Select **Deploy** and review the confirmation. Use **Retrieve** when you intend to replace selected local files with their Target versions.
 
-Power Apps components and Power Pages components use separate solution selections. Azure projects retain their reviewed app destination. Component coverage depends on the type and operation; a readable metadata row does not imply that it can be deployed or deleted independently.
+To build a repeatable file selection, choose **Add File to Package Manifest** on the files in Explorer. The workspace package uses one `paths` array of workspace-relative file names, such as `{ "paths": ["solutions/Example/src/WebResources/sample_script.js"] }`. Named solution and website change manifests use the same format with paths relative to the solution source or website root. Existing named manifests with individual `path` entries still work. [File manifest examples](WORKFLOWS.md#file-manifests)
+
+Use **Accounts → Dataverse → Target solutions by component type** to assign Dataverse and Power Pages components to destinations for the selected environment. Azure projects retain their reviewed app destination. Component coverage depends on the type and operation; a readable metadata row does not imply that it can be deployed or deleted independently.
 
 | Workbench area | What it supports |
 | --- | --- |

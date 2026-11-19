@@ -105,7 +105,7 @@ Use `workbench_documents` with `{ "action": "list" }` to find captured editor/di
 
 ## Review exact changes before deployment
 
-For a local file/manifest review, discover `workbench_fileDiff` and supply only the requested absolute workspace paths. Selecting a manifest selects its entries; selecting an individual file does not select its whole manifest. Preserve the user's checked subset, including unchecked files when rerunning a review.
+For a local file or manifest review, discover `workbench_fileDiff` and pass the absolute workspace path of the requested selection. Write file manifests as `{ "paths": ["relative/file"] }`. Resolve entries in `.vscode/power-platform-package.json` from the workspace root, named solution manifest entries from the unpacked solution source root, and named website manifest entries from the downloaded site root. Existing named manifests with an array of `{ "path": "…" }` entries remain supported. Preserve the requested files and the user's checked subset throughout review.
 
 Read every changed review row and its status, captured destination, comparison and selection state. Open row comparisons through returned actions. Identical files are omitted from deployment selection. A new component may bring its exact paired descriptor into the checked review under Workbench's existing rules; review that visible addition. Do not add siblings, dependencies, dirty editors or unrelated local files yourself.
 
